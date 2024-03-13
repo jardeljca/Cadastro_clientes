@@ -1,6 +1,7 @@
 package gui;
 
-import java.awt.Label;
+import javafx.scene.control.Label;
+
 
 import Entidades.Clientes;
 import javafx.fxml.FXML;
@@ -15,8 +16,10 @@ public class ViewControler {
 
 	@FXML
 	private TextField txtNomeCliente;
+	
 	@FXML
 	private TextField txtCpfCliente;
+	
 	@FXML
 	private Button btCadastro;
 	
@@ -30,17 +33,32 @@ public class ViewControler {
 
 	@FXML
 	private TextField txtCpfClienteBusca;
+	
 	@FXML
 	private Button btPesquisa;
+	
 	@FXML
 	private Label mostraCpf;
+	
 	@FXML
-	private Label mostraNome;
+	private Label mostrarNome;
 
 	@FXML
 	public void onbtPesquisaAction() {
-		clientes.buscarCliente(txtCpfClienteBusca);
-		limparForms();
+		 String cpfBusca = txtCpfClienteBusca.getText();
+		    clientes.buscarCliente(txtCpfClienteBusca);
+
+		    if (clientes.getClientes().containsKey(cpfBusca)) {
+		        // Cliente encontrado, atualiza os labels
+		        mostraCpf.setText(cpfBusca);
+		        mostrarNome.setText(clientes.getClientes().get(cpfBusca));
+		    } else {
+		        // Cliente não encontrado, limpa os labels
+		        mostraCpf.setText("CPF: Sem registro");
+		        mostrarNome.setText("Nome: Sem registro");
+		    }
+
+		    limparForms();
 	}
 
 	@FXML
