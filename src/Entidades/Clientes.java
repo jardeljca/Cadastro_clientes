@@ -2,7 +2,6 @@ package Entidades;
 
 import java.util.HashMap;
 
-import gui.ViewControler;
 import gui.util.Alerts;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
