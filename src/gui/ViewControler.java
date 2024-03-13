@@ -54,8 +54,8 @@ public class ViewControler {
 		        mostrarNome.setText(clientes.getClientes().get(cpfBusca));
 		    } else {
 		        // Cliente não encontrado, limpa os labels
-		        mostraCpf.setText("CPF: Sem registro");
-		        mostrarNome.setText("Nome: Sem registro");
+		        mostraCpf.setText("");
+		        mostrarNome.setText("");
 		    }
 
 		    limparForms();

@@ -3,6 +3,8 @@ package Entidades;
 import java.util.HashMap;
 
 import gui.ViewControler;
+import gui.util.Alerts;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 public class Clientes {
@@ -16,9 +18,9 @@ public class Clientes {
 
         if (!getClientes().containsKey(cpf)) {
             getClientes().put(cpf, nome);
-            System.out.println("Dados adicionados com sucesso!");
+            Alerts.showAlert("Informação", null, "Dados do cliente cadastrado com sucesso!", AlertType.INFORMATION);
         } else {
-            System.out.println("CPF já está cadastrado. Dados não foram adicionados.");
+            Alerts.showAlert("Erro", null, "CPF já está cadastrado. Dados não foram adicionados!", AlertType.ERROR);
         }
         System.out.println(getClientes());
     }
@@ -30,7 +32,7 @@ public class Clientes {
     		System.out.println(cpfBusca + getClientes().get(cpfBusca));
 
     	} else {
-    		System.out.println("Esse CPF não consta em nossos registros");
+    		Alerts.showAlert("Erro", null, "Esse CPF não consta em nossos registros!", AlertType.ERROR);
     	}
     	
     }

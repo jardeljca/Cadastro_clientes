@@ -64,7 +64,10 @@
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font></Label>
-                        <Label fx:id="mostrarNome" alignment="CENTER" layoutX="323.0" layoutY="212.0" prefHeight="17.0" prefWidth="431.0" />
+                        <Label fx:id="mostrarNome" alignment="CENTER" layoutX="323.0" layoutY="212.0" prefHeight="17.0" prefWidth="431.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
                      </children></AnchorPane>
             </content>
           </Tab>
